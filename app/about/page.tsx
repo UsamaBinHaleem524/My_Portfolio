@@ -64,17 +64,17 @@ export default function About() {
             <h2 className="text-3xl font-bold mb-6">MERN Stack Developer</h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                I'm a proficient MERN stack developer with over a year of
+                I'm a proficient MERN stack developer with nearly two years of
                 hands-on experience building web applications and APIs using
                 modern technologies. My journey in software development has been
                 driven by a passion for creating robust and scalable solutions.
               </p>
               <p>
-                Currently working as a Software Engineer at IIFA Tech, I
-                contribute to multiple full-stack projects, handling API
-                integrations, building user interfaces, and developing
-                high-performance web applications using React.js, Node.js,
-                Express.js, MongoDB, PostgreSQL, and TypeScript.
+                Currently working as a Software Engineer at A3Techverse, I
+                integrate AI agents into applications, implement advanced animations,
+                and develop interactive and highly responsive user interfaces. I also
+                work on projects involving various payment gateways, webhook processing,
+                and scheduled background tasks using cron jobs.
               </p>
               <p>
                 My experience spans across various domains including real estate
@@ -87,7 +87,7 @@ export default function About() {
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <a
-                href="https://drive.google.com/file/d/1cLDDXLRFPVjsyrMbGJVlF750rO7mb9Ur/view?usp=sharing"
+                href="https://drive.google.com/file/d/1ekigZFbS3M9AMPw6IHLAapykY6DlVPcJ/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -142,14 +142,14 @@ export default function About() {
               <div>
                 <h4 className="font-medium">Software Engineer</h4>
                 <p className="text-sm text-muted-foreground">
-                  IIFA Tech, Lahore
+                  A3Techverse, Remote, United States
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  August 2024 - Present
+                  August 2025 - Present
                 </p>
                 <p className="text-sm text-muted-foreground mt-2">
-                  Working on multiple full-stack projects using the MERN stack,
-                  contributing to both frontend and backend development.
+                  Integrating AI agents into applications, implementing advanced animations,
+                  and developing interactive and highly responsive user interfaces.
                 </p>
               </div>
             </CardContent>

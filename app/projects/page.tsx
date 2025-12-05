@@ -1,20 +1,16 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github } from "lucide-react";
-import afaf from "../assets/afafmed.png";
-import vodocs from "../assets/vodocs.png"
+import { ExternalLink } from "lucide-react";
 
 const projects = [
   {
     title: "MyHomes – Real Estate Platform",
     description:
-      "A comprehensive real estate platform enabling customers and property owners to book and manage properties online with short, medium, and long lease options. Features dynamic booking, calendar availability, and price negotiation across nine user roles.",
-    image: "/placeholder.svg?height=300&width=500",
+      "Contributed as a Full Stack Developer to MyHomes, a real estate platform enabling customers and property owners to book and manage properties online with short, medium, and long lease options. Implemented dynamic booking, calendar availability, and price negotiation features across nine user roles including Admin, Agent, Landlord, and Customer. Deployed the backend and PostgreSQL database on Render.",
     technologies: [
       "React.js",
       "Node.js",
@@ -27,8 +23,9 @@ const projects = [
       "Dynamic booking system",
       "Calendar availability",
       "Price negotiation",
-      "Multi-role user management",
+      "Nine user roles (Admin, Agent, Landlord, Customer, etc.)",
       "Property management",
+      "Deployed on Render",
     ],
     liveUrl: "#",
     githubUrl: "#",
@@ -36,8 +33,7 @@ const projects = [
   {
     title: "LSP Homes – Short-Term Rental Platform",
     description:
-      "A full-stack MERN application for short-let rental platform providing admin and customer dashboards for managing properties and bookings. Includes protected routing, RESTful APIs, and calendar synchronization.",
-    image: "/placeholder.svg?height=300&width=500",
+      "Built a full-stack MERN application for LSP Homes, a short-let rental platform providing admin and customer dashboards for managing properties and bookings. Implemented protected routing, RESTful APIs, dynamic property forms, and calendar synchronization with iCalendar integration. Developed responsive UI with multi-step property addition, booking management, chat system, and admin features for amenities, features, and settings.",
     technologies: [
       "React.js",
       "Node.js",
@@ -51,36 +47,39 @@ const projects = [
       "iCalendar integration",
       "Chat system",
       "Booking management",
+      "Protected routing",
+      "RESTful APIs",
     ],
     liveUrl: "#",
   },
   {
-    title: "Afaf Medical Care – Healthcare RCM",
+    title: "Afaf Medical Care – Healthcare Revenue Optimization Application",
     description:
-      "Modern single-page React frontend for a healthcare billing services company focused on Revenue Cycle Management. Features engaging UI with 97.02% claim acceptance rate highlights and interactive components.",
-    image: afaf,
+      "Developed a modern, single-page React frontend for Afaf Medical Care, a healthcare billing services company focused on Revenue Cycle Management (RCM) and practice optimization. Highlighted key specialties such as claim handling (97.02% acceptance rate), revenue consistency strategies, and enhanced patient care support through engaging and responsive UI. Integrated AOS and React Bits for interactive UI components and animations.",
     technologies: ["React.js", "AOS", "React Bits", "Tailwind CSS"],
     features: [
-      "Revenue cycle management",
-      "Interactive UI components",
+      "Revenue Cycle Management (RCM)",
+      "97.02% claim acceptance rate highlights",
+      "Interactive UI components with AOS and React Bits",
       "Responsive design",
-      "Performance optimization",
-      "Healthcare billing focus",
+      "Practice optimization features",
+      "Enhanced patient care support",
     ],
     liveUrl: "https://afafmedicalcare.netlify.app/",
   },
   {
-    title: "Vodocs – Business Formation Platform",
+    title: "Vodocs – Business Formation and S-Corp Filing Platform",
     description:
-      "MERN-based platform for business formation, S-Corp filing, EIN applications, and compliance services. Features responsive UI with pricing comparisons and step-by-step LLC formation process.",
-    image: vodocs,
+      "Contributed to the MERN-based Vodocs platform focused on business formation, S-Corp filing, EIN applications, and compliance services. Designed and implemented responsive, accessible UI components for pricing comparisons, service features, and step-by-step LLC formation process. Integrated scroll-based animations using AOS for enhanced user experience across all sections and interactive pricing tables.",
     technologies: ["React.js", "Tailwind CSS", "AOS"],
     features: [
       "Business formation services",
       "S-Corp filing system",
       "EIN applications",
+      "Compliance services",
       "Pricing comparisons",
-      "Step-by-step processes",
+      "Step-by-step LLC formation process",
+      "Scroll-based animations with AOS",
     ],
     liveUrl: "https://www.vodocs.com/",
   },
@@ -122,81 +121,67 @@ export default function Projects() {
         </div>
 
         {/* Projects Grid */}
-        <div className="space-y-12">
+        <div className="space-y-8">
           {projects.map((project, index) => (
             <Card
               key={project.title}
-              className={`animate-on-scroll opacity-0 translate-y-8 overflow-hidden ${
-                index % 2 === 1 ? "lg:flex-row-reverse" : ""
-              }`}
+              className="animate-on-scroll opacity-0 translate-y-8"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              <div className="lg:flex">
-                <div className="lg:w-[70%]">
-                  <div className="relative h-64 lg:h-full">
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      className="object-cover"
-                    />
+              <CardHeader>
+                <CardTitle className="text-2xl mb-2">
+                  {project.title}
+                </CardTitle>
+                <p className="text-muted-foreground leading-relaxed">
+                  {project.description}
+                </p>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                {/* Technologies */}
+                <div>
+                  <h4 className="font-semibold mb-3">Technologies Used</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.map((tech) => (
+                      <Badge
+                        key={tech}
+                        variant="outline"
+                        className="text-xs"
+                      >
+                        {tech}
+                      </Badge>
+                    ))}
                   </div>
                 </div>
-                <div className="lg:w-1/2 p-6 lg:p-8">
-                  <CardHeader className="p-0 mb-4">
-                    <CardTitle className="text-2xl mb-2">
-                      {project.title}
-                    </CardTitle>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {project.description}
-                    </p>
-                  </CardHeader>
-                  <CardContent className="p-0 space-y-6">
-                    {/* Technologies */}
-                    <div>
-                      <h4 className="font-semibold mb-3">Technologies Used</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {project.technologies.map((tech) => (
-                          <Badge
-                            key={tech}
-                            variant="outline"
-                            className="text-xs"
-                          >
-                            {tech}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
 
-                    {/* Key Features */}
-                    <div>
-                      <h4 className="font-semibold mb-3">Key Features</h4>
-                      <ul className="text-sm text-muted-foreground space-y-1">
-                        {project.features.map((feature, idx) => (
-                          <li key={idx} className="flex items-center">
-                            <span className="w-1.5 h-1.5 bg-primary rounded-full mr-2 flex-shrink-0"></span>
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Action Buttons */}
-                    <div className="flex gap-4 pt-4">
-                      <Button asChild>
-                        <a
-                          href={project.liveUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <ExternalLink className="mr-2 h-4 w-4" />
-                          Live Demo
-                        </a>
-                      </Button>
-                    </div>
-                  </CardContent>
+                {/* Key Features */}
+                <div>
+                  <h4 className="font-semibold mb-3">Key Features</h4>
+                  <ul className="text-sm text-muted-foreground space-y-1">
+                    {project.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-center">
+                        <span className="w-1.5 h-1.5 bg-primary rounded-full mr-2 flex-shrink-0"></span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              </div>
+
+                {/* Action Buttons */}
+                {project.liveUrl && project.liveUrl !== "#" && (
+                  <div className="flex gap-4 pt-4">
+                    <Button asChild>
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink className="mr-2 h-4 w-4" />
+                        Live Demo
+                      </a>
+                    </Button>
+                  </div>
+                )}
+              </CardContent>
             </Card>
           ))}
         </div>

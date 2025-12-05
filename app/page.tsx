@@ -20,8 +20,8 @@ export default function Home() {
               MERN Stack Developer
             </h2>
             <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-              Crafting robust backend solutions with MERN stack technologies. Building scalable web applications with
-              modern technologies and best practices.
+              Proficient in MERN stack development with nearly two years of hands-on experience building web applications and
+              APIs, using modern technologies to deliver robust and scalable solutions.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
@@ -82,7 +82,7 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-center text-foreground mb-12">My Impact</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="p-6 bg-transparent rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-2 border border-gray-700/50">
-              <div className="text-4xl font-bold text-primary mb-3">1+</div>
+              <div className="text-4xl font-bold text-primary mb-3">2+</div>
               <div className="text-lg text-gray-300 font-medium">Years Experience</div>
               <div className="text-sm text-gray-400 mt-2">Building robust MERN stack solutions</div>
             </div>

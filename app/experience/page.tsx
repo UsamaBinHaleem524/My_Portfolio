@@ -8,18 +8,34 @@ import { Calendar, MapPin, Building, GraduationCap } from "lucide-react"
 const experiences = [
   {
     title: "Software Engineer",
-    company: "IIFA Tech",
-    location: "Lahore, Pakistan",
-    period: "August 2024 – Present",
+    company: "A3Techverse",
+    location: "Remote, United States",
+    period: "August 2025 – Present",
     type: "Full-time",
     description:
-      "Working on multiple full-stack projects using the MERN stack, contributing to both frontend and backend development, handling API integrations, building user interfaces, and developing scalable and high-performance web applications.",
+      "Integrating AI agents into applications, implementing advanced animations, and developing interactive and highly responsive user interfaces. Working on projects involving various payment gateways, webhook processing, and scheduled background tasks using cron jobs.",
+    technologies: ["React.js", "Next.js", "Node.js", "Express.js", "AI Integration", "Payment Gateways"],
+    achievements: [
+      "Integrated AI agents into applications for enhanced functionality",
+      "Implemented advanced animations and interactive user interfaces",
+      "Developed payment gateway integrations and webhook processing systems",
+      "Recognized with Employee Recognition for outstanding performance and impactful contribution across multiple projects",
+    ],
+  },
+  {
+    title: "Associate Software Engineer",
+    company: "IIFA Tech",
+    location: "Lahore, Pakistan",
+    period: "June 2024 – August 2025",
+    type: "Full-time",
+    description:
+      "Worked on multiple full-stack projects using the MERN stack, contributing to both the frontend and backend — handling API integrations, building user interfaces, and developing scalable, high-performance web applications.",
     technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "PostgreSQL", "TypeScript"],
     achievements: [
       "Developed and maintained multiple full-stack web applications",
       "Implemented RESTful APIs and database integrations",
       "Collaborated with cross-functional teams on project delivery",
-      "Optimized application performance and user experience",
+      "Honored as the Employee of the Month for consistently exceeding project milestones and contributing to the team's overall success",
     ],
   },
   {
@@ -30,7 +46,7 @@ const experiences = [
     type: "Internship",
     description:
       "Learned core web technologies including HTML, CSS, and JavaScript, along with React.js fundamentals. Built responsive UIs using JSX, Props, Hooks, and reusable components. Practiced API integration, routing, and state management through hands-on project development.",
-    technologies: ["HTML", "CSS", "TailwindCSS", "JavaScript", "React.js"],
+    technologies: ["HTML", "CSS", "JavaScript", "React.js"],
     achievements: [
       "Mastered React.js fundamentals and modern development practices",
       "Built responsive and interactive user interfaces",

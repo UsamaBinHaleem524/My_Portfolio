@@ -11,11 +11,12 @@ const skillCategories = [
     icon: "🎨",
     skills: [
       { name: "React.js", level: 90, icon: "⚛️" },
+      { name: "Next.js", level: 85, icon: "▲" },
       { name: "Redux Toolkit", level: 85, icon: "🔄" },
-      { name: "HTML5", level: 95, icon: "🌐" },
+      { name: "React Bits", level: 80, icon: "🧩" },
+      { name: "AOS", level: 85, icon: "✨" },
+      { name: "HTML", level: 95, icon: "🌐" },
       { name: "Tailwind CSS", level: 90, icon: "🎨" },
-      { name: "JavaScript", level: 88, icon: "📜" },
-      { name: "TypeScript", level: 80, icon: "📘" },
     ],
   },
   {
@@ -24,9 +25,11 @@ const skillCategories = [
     skills: [
       { name: "Node.js", level: 88, icon: "🟢" },
       { name: "Express.js", level: 85, icon: "🚀" },
+      { name: "Nest.js", level: 80, icon: "🪺" },
       { name: "REST APIs", level: 90, icon: "🔗" },
       { name: "JWT", level: 85, icon: "🔐" },
       { name: "Socket.IO", level: 75, icon: "🔌" },
+      { name: "Swagger", level: 80, icon: "📚" },
     ],
   },
   {
@@ -36,17 +39,22 @@ const skillCategories = [
       { name: "MongoDB", level: 85, icon: "🍃" },
       { name: "PostgreSQL", level: 80, icon: "🐘" },
       { name: "Cloudinary", level: 85, icon: "☁️" },
+      { name: "AWS S3", level: 75, icon: "☁️" },
     ],
   },
   {
-    title: "Tools & Deployment",
+    title: "DevOps & Tools",
     icon: "🛠️",
     skills: [
       { name: "Git", level: 90, icon: "📝" },
       { name: "GitHub", level: 90, icon: "🐙" },
+      { name: "GitHub Desktop", level: 85, icon: "🖥️" },
+      { name: "Docker", level: 75, icon: "🐳" },
+      { name: "CI/CD", level: 75, icon: "🔄" },
       { name: "Postman", level: 85, icon: "📮" },
-      { name: "Netlify", level: 80, icon: "🌐" },
       { name: "Render", level: 80, icon: "🚀" },
+      { name: "Netlify", level: 80, icon: "🌐" },
+      { name: "Jira", level: 80, icon: "🎯" },
     ],
   },
 ]
