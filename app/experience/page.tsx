@@ -7,35 +7,51 @@ import { Calendar, MapPin, Building, GraduationCap } from "lucide-react"
 
 const experiences = [
   {
+    title: "Senior Software Engineer",
+    company: "Ignite Dev",
+    location: "Remote, Lahore",
+    period: "Sept 2025 – Present",
+    type: "Full-time",
+    description:
+      "Built AI-powered solutions and full-stack applications for different client projects using Node.js, React.js, PostgreSQL, and automation tools. Developed a voice AI agent using Retell AI with a custom knowledge base that extracts car inventory data from Excel sheets and responds to client queries dynamically. Integrated n8n workflows for automated data extraction, processing, and synchronization between systems.",
+    technologies: ["Node.js", "React.js", "PostgreSQL", "Retell AI", "n8n", "GoHighLevel", "AI Agents"],
+    achievements: [
+      "Developed a voice AI agent using Retell AI with custom knowledge base",
+      "Integrated n8n workflows for automated data extraction and processing",
+      "Mapped and synced customer and inventory data to GoHighLevel using custom fields and API endpoints",
+      "Worked on multiple full-stack features including frontend interfaces, backend APIs, database integration, and workflow automation",
+    ],
+  },
+  {
     title: "Software Engineer",
     company: "A3Techverse",
     location: "Remote, United States",
-    period: "August 2025 – Present",
+    period: "Aug 2025 – Aug 2026",
     type: "Full-time",
     description:
-      "Integrating AI agents into applications, implementing advanced animations, and developing interactive and highly responsive user interfaces. Working on projects involving various payment gateways, webhook processing, and scheduled background tasks using cron jobs.",
-    technologies: ["React.js", "Next.js", "Node.js", "Express.js", "AI Integration", "Payment Gateways"],
+      "Integrated AI agents into production apps to automate user workflows and cut down on manual work. Built a Slack-based AI agent using LangChain and LangGraph that classifies user intents, retrieves context from conversations, and triggers actions like meeting creation and summaries. Built advanced animations and responsive interfaces that work smoothly across desktop, tablet, and mobile.",
+    technologies: ["React.js", "Next.js", "Node.js", "Express.js", "LangChain", "LangGraph", "Stripe", "OpenAI"],
     achievements: [
-      "Integrated AI agents into applications for enhanced functionality",
-      "Implemented advanced animations and interactive user interfaces",
-      "Developed payment gateway integrations and webhook processing systems",
-      "Recognized with Employee Recognition for outstanding performance and impactful contribution across multiple projects",
+      "Built a Slack-based AI agent using LangChain and LangGraph for workflow automation",
+      "Integrated AI agents into production apps to automate user workflows",
+      "Implemented Stripe payment integrations, webhook handling, and cron-based background jobs",
+      "Awarded Employee Recognition for strong contributions across multiple projects",
     ],
   },
   {
     title: "Associate Software Engineer",
     company: "IIFA Tech",
     location: "Lahore, Pakistan",
-    period: "June 2024 – August 2025",
+    period: "June 2024 – July 2025",
     type: "Full-time",
     description:
-      "Worked on multiple full-stack projects using the MERN stack, contributing to both the frontend and backend — handling API integrations, building user interfaces, and developing scalable, high-performance web applications.",
+      "Delivered full-stack MERN projects end-to-end, building UI components, integrating APIs, and optimizing performance. Worked on multiple client projects involving real-time features, payment integrations, and complex data management systems.",
     technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "PostgreSQL", "TypeScript"],
     achievements: [
-      "Developed and maintained multiple full-stack web applications",
-      "Implemented RESTful APIs and database integrations",
+      "Delivered full-stack MERN projects end-to-end",
+      "Built UI components, integrated APIs, and optimized application performance",
+      "Named Employee of the Month for consistently delivering on time and supporting the team's goals",
       "Collaborated with cross-functional teams on project delivery",
-      "Honored as the Employee of the Month for consistently exceeding project milestones and contributing to the team's overall success",
     ],
   },
   {
@@ -45,12 +61,12 @@ const experiences = [
     period: "March 2024 – May 2024",
     type: "Internship",
     description:
-      "Learned core web technologies including HTML, CSS, and JavaScript, along with React.js fundamentals. Built responsive UIs using JSX, Props, Hooks, and reusable components. Practiced API integration, routing, and state management through hands-on project development.",
+      "Built responsive web pages in React using JSX, props, hooks, and reusable components. Practiced API integration, client-side routing, and state management while strengthening HTML, CSS, and JavaScript fundamentals.",
     technologies: ["HTML", "CSS", "JavaScript", "React.js"],
     achievements: [
-      "Mastered React.js fundamentals and modern development practices",
-      "Built responsive and interactive user interfaces",
-      "Implemented state management and API integrations",
+      "Built responsive web pages using React.js fundamentals",
+      "Practiced API integration and client-side routing",
+      "Strengthened HTML, CSS, and JavaScript fundamentals",
       "Developed reusable component libraries",
     ],
   },
@@ -132,14 +148,14 @@ export default function Experience() {
             {experiences.map((exp, index) => (
               <Card
                 key={index}
-                className="animate-on-scroll opacity-0 translate-y-8"
+                className="animate-on-scroll opacity-0 translate-y-8 group hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] border-2 hover:border-primary/50 bg-gradient-to-br from-background to-primary/5"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
                 <CardHeader>
                   <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
                     <div>
-                      <CardTitle className="text-2xl mb-2">{exp.title}</CardTitle>
-                      <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-muted-foreground">
+                      <CardTitle className="text-2xl mb-2 group-hover:text-primary transition-colors duration-300">{exp.title}</CardTitle>
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-muted-foreground group-hover:text-foreground transition-colors duration-300">
                         <div className="flex items-center">
                           <Building className="h-4 w-4 mr-1" />
                           {exp.company}
@@ -163,10 +179,10 @@ export default function Experience() {
                   <p className="text-muted-foreground leading-relaxed">{exp.description}</p>
 
                   <div>
-                    <h4 className="font-semibold mb-3">Technologies Used</h4>
+                    <h4 className="font-semibold mb-3 group-hover:text-primary transition-colors duration-300">Technologies Used</h4>
                     <div className="flex flex-wrap gap-2">
                       {exp.technologies.map((tech) => (
-                        <Badge key={tech} variant="outline" className="text-xs">
+                        <Badge key={tech} variant="outline" className="text-xs hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110">
                           {tech}
                         </Badge>
                       ))}
@@ -174,12 +190,12 @@ export default function Experience() {
                   </div>
 
                   <div>
-                    <h4 className="font-semibold mb-3">Key Achievements</h4>
+                    <h4 className="font-semibold mb-3 group-hover:text-primary transition-colors duration-300">Key Achievements</h4>
                     <ul className="text-sm text-muted-foreground space-y-2">
                       {exp.achievements.map((achievement, idx) => (
-                        <li key={idx} className="flex items-start">
-                          <span className="w-1.5 h-1.5 bg-primary rounded-full mr-3 mt-2 flex-shrink-0"></span>
-                          {achievement}
+                        <li key={idx} className="flex items-start hover:translate-x-2 transition-transform duration-300 group/item">
+                          <span className="w-2 h-2 bg-primary rounded-full mr-3 mt-2 flex-shrink-0 group-hover/item:scale-150 transition-transform duration-300"></span>
+                          <span className="group-hover/item:text-foreground transition-colors duration-300">{achievement}</span>
                         </li>
                       ))}
                     </ul>
@@ -201,13 +217,13 @@ export default function Experience() {
             {education.map((edu, index) => (
               <Card
                 key={index}
-                className="animate-on-scroll opacity-0 translate-y-8"
+                className="animate-on-scroll opacity-0 translate-y-8 group hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] border-2 hover:border-primary/50 bg-gradient-to-br from-background to-primary/5"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
                 <CardHeader>
                   <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
                     <div>
-                      <CardTitle className="text-2xl mb-2">{edu.degree}</CardTitle>
+                      <CardTitle className="text-2xl mb-2 group-hover:text-primary transition-colors duration-300">{edu.degree}</CardTitle>
                       <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-muted-foreground">
                         <div className="flex items-center">
                           <Building className="h-4 w-4 mr-1" />
@@ -229,12 +245,12 @@ export default function Experience() {
                   <p className="text-muted-foreground leading-relaxed">{edu.description}</p>
 
                   <div>
-                    <h4 className="font-semibold mb-3">Key Highlights</h4>
+                    <h4 className="font-semibold mb-3 group-hover:text-primary transition-colors duration-300">Key Highlights</h4>
                     <ul className="text-sm text-muted-foreground space-y-2">
                       {edu.achievements.map((achievement, idx) => (
-                        <li key={idx} className="flex items-start">
-                          <span className="w-1.5 h-1.5 bg-primary rounded-full mr-3 mt-2 flex-shrink-0"></span>
-                          {achievement}
+                        <li key={idx} className="flex items-start hover:translate-x-2 transition-transform duration-300 group/item">
+                          <span className="w-2 h-2 bg-primary rounded-full mr-3 mt-2 flex-shrink-0 group-hover/item:scale-150 transition-transform duration-300"></span>
+                          <span className="group-hover/item:text-foreground transition-colors duration-300">{achievement}</span>
                         </li>
                       ))}
                     </ul>

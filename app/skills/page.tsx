@@ -13,23 +13,36 @@ const skillCategories = [
       { name: "React.js", level: 90, icon: "⚛️" },
       { name: "Next.js", level: 85, icon: "▲" },
       { name: "Redux Toolkit", level: 85, icon: "🔄" },
+      { name: "Tailwind CSS", level: 90, icon: "🎨" },
       { name: "React Bits", level: 80, icon: "🧩" },
       { name: "AOS", level: 85, icon: "✨" },
-      { name: "HTML", level: 95, icon: "🌐" },
-      { name: "Tailwind CSS", level: 90, icon: "🎨" },
+      { name: "HTML/CSS", level: 95, icon: "🌐" },
     ],
   },
   {
     title: "Backend Development",
     icon: "⚙️",
     skills: [
-      { name: "Node.js", level: 88, icon: "🟢" },
-      { name: "Express.js", level: 85, icon: "🚀" },
-      { name: "Nest.js", level: 80, icon: "🪺" },
+      { name: "Node.js", level: 90, icon: "🟢" },
+      { name: "Express.js", level: 88, icon: "🚀" },
+      { name: "Nest.js", level: 82, icon: "🪺" },
       { name: "REST APIs", level: 90, icon: "🔗" },
       { name: "JWT", level: 85, icon: "🔐" },
-      { name: "Socket.IO", level: 75, icon: "🔌" },
+      { name: "Socket.IO", level: 78, icon: "🔌" },
       { name: "Swagger", level: 80, icon: "📚" },
+    ],
+  },
+  {
+    title: "AI & LLM",
+    icon: "🤖",
+    skills: [
+      { name: "RAG", level: 85, icon: "🧠" },
+      { name: "Google Gemini API", level: 85, icon: "✨" },
+      { name: "Vector Embeddings", level: 82, icon: "🔢" },
+      { name: "Semantic Search", level: 80, icon: "🔍" },
+      { name: "Prompt Engineering", level: 88, icon: "💬" },
+      { name: "LangChain", level: 83, icon: "⛓️" },
+      { name: "LangGraph", level: 80, icon: "📊" },
     ],
   },
   {
@@ -37,9 +50,9 @@ const skillCategories = [
     icon: "🗄️",
     skills: [
       { name: "MongoDB", level: 85, icon: "🍃" },
-      { name: "PostgreSQL", level: 80, icon: "🐘" },
+      { name: "PostgreSQL", level: 82, icon: "🐘" },
+      { name: "Qdrant (Vector DB)", level: 80, icon: "🔮" },
       { name: "Cloudinary", level: 85, icon: "☁️" },
-      { name: "AWS S3", level: 75, icon: "☁️" },
     ],
   },
   {
@@ -48,13 +61,13 @@ const skillCategories = [
     skills: [
       { name: "Git", level: 90, icon: "📝" },
       { name: "GitHub", level: 90, icon: "🐙" },
-      { name: "GitHub Desktop", level: 85, icon: "🖥️" },
-      { name: "Docker", level: 75, icon: "🐳" },
+      { name: "Docker", level: 78, icon: "🐳" },
       { name: "CI/CD", level: 75, icon: "🔄" },
       { name: "Postman", level: 85, icon: "📮" },
       { name: "Render", level: 80, icon: "🚀" },
       { name: "Netlify", level: 80, icon: "🌐" },
       { name: "Jira", level: 80, icon: "🎯" },
+      { name: "n8n", level: 82, icon: "🔗" },
     ],
   },
 ]
@@ -109,26 +122,30 @@ export default function Skills() {
           {skillCategories.map((category, index) => (
             <Card
               key={category.title}
-              className="animate-on-scroll opacity-0 translate-y-8"
+              className="animate-on-scroll opacity-0 translate-y-8 group hover:shadow-2xl transition-all duration-500 hover:scale-105 border-2 hover:border-primary/50"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardHeader>
                 <CardTitle className="flex items-center gap-3">
-                  <span className="text-2xl">{category.icon}</span>
-                  {category.title}
+                  <span className="text-3xl group-hover:scale-125 transition-transform duration-300">{category.icon}</span>
+                  <span className="group-hover:text-primary transition-colors duration-300">{category.title}</span>
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                {category.skills.map((skill) => (
-                  <div key={skill.name} className="space-y-2">
+                {category.skills.map((skill, idx) => (
+                  <div 
+                    key={skill.name} 
+                    className="space-y-2 group/skill hover:translate-x-2 transition-transform duration-300"
+                    style={{ animationDelay: `${idx * 0.05}s` }}
+                  >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
-                        <span className="text-lg">{skill.icon}</span>
-                        <span className="font-medium">{skill.name}</span>
+                        <span className="text-lg group-hover/skill:scale-125 transition-transform duration-300">{skill.icon}</span>
+                        <span className="font-medium group-hover/skill:text-primary transition-colors duration-300">{skill.name}</span>
                       </div>
-                      <span className="text-sm text-muted-foreground">{skill.level}%</span>
+                      <span className="text-sm text-muted-foreground group-hover/skill:text-primary transition-colors duration-300 font-semibold">{skill.level}%</span>
                     </div>
-                    <Progress value={skill.level} className="h-2" />
+                    <Progress value={skill.level} className="h-2 group-hover/skill:h-3 transition-all duration-300" />
                   </div>
                 ))}
               </CardContent>
@@ -138,11 +155,11 @@ export default function Skills() {
 
         {/* Soft Skills */}
         <div className="animate-on-scroll opacity-0 translate-y-8">
-          <Card>
+          <Card className="hover:shadow-2xl transition-all duration-500 border-2 hover:border-primary/50">
             <CardHeader>
               <CardTitle className="flex items-center gap-3">
-                <span className="text-2xl">🧠</span>
-                Soft Skills
+                <span className="text-3xl">🧠</span>
+                <span>Soft Skills</span>
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -151,8 +168,8 @@ export default function Skills() {
                   <Badge
                     key={skill}
                     variant="secondary"
-                    className="px-4 py-2 text-sm hover:bg-primary hover:text-primary-foreground transition-colors cursor-default"
-                    style={{ animationDelay: `${index * 0.1}s` }}
+                    className="px-4 py-2 text-sm hover:bg-gradient-to-r hover:from-primary hover:to-blue-500 hover:text-primary-foreground transition-all duration-300 cursor-default hover:scale-110 hover:shadow-lg animate-fade-in-up"
+                    style={{ animationDelay: `${index * 0.05}s` }}
                   >
                     {skill}
                   </Badge>

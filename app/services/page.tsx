@@ -4,9 +4,37 @@ import { useEffect, useRef } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Code, Database, Globe, Smartphone, Settings, Zap, ArrowRight, CheckCircle } from "lucide-react"
+import { Code, Database, Globe, Smartphone, Settings, Zap, ArrowRight, CheckCircle, Brain, Workflow } from "lucide-react"
 
 const services = [
+  {
+    icon: <Brain className="h-8 w-8" />,
+    title: "AI & LLM Integration",
+    description:
+      "Integrate cutting-edge AI capabilities into your applications using RAG, vector embeddings, and LLM APIs to create intelligent, context-aware solutions.",
+    features: [
+      "RAG (Retrieval-Augmented Generation) implementation",
+      "Vector embeddings and semantic search",
+      "Google Gemini and OpenAI API integration",
+      "AI chatbots and virtual assistants",
+      "Prompt engineering and optimization",
+    ],
+    technologies: ["Google Gemini API", "LangChain", "LangGraph", "Qdrant", "OpenAI", "RAG"],
+  },
+  {
+    icon: <Workflow className="h-8 w-8" />,
+    title: "Workflow Automation",
+    description:
+      "Automate repetitive tasks and build intelligent workflows using n8n and custom automation scripts to improve efficiency and reduce manual work.",
+    features: [
+      "n8n workflow automation",
+      "Third-party API integrations",
+      "Data extraction and processing",
+      "Automated synchronization between systems",
+      "Custom automation scripts",
+    ],
+    technologies: ["n8n", "Node.js", "REST APIs", "Webhooks", "Cron Jobs"],
+  },
   {
     icon: <Globe className="h-8 w-8" />,
     title: "Custom Web Applications",
@@ -132,14 +160,14 @@ export default function Services() {
           {services.map((service, index) => (
             <Card
               key={service.title}
-              className="animate-on-scroll opacity-0 translate-y-8 hover:shadow-lg transition-shadow duration-300"
+              className="animate-on-scroll opacity-0 translate-y-8 group hover:shadow-2xl transition-all duration-500 hover:scale-105 border-2 hover:border-primary/50 bg-gradient-to-br from-background to-primary/5"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardHeader>
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="p-3 bg-primary/10 rounded-lg text-primary">{service.icon}</div>
+                  <div className="p-3 bg-primary/10 rounded-lg text-primary group-hover:scale-125 group-hover:rotate-12 transition-all duration-300">{service.icon}</div>
                   <div>
-                    <CardTitle className="text-xl mb-2">{service.title}</CardTitle>
+                    <CardTitle className="text-xl mb-2 group-hover:text-primary transition-colors duration-300">{service.title}</CardTitle>
                   </div>
                 </div>
                 <p className="text-muted-foreground leading-relaxed">{service.description}</p>
@@ -147,12 +175,12 @@ export default function Services() {
               <CardContent className="space-y-6">
                 {/* Features */}
                 <div>
-                  <h4 className="font-semibold mb-3">What's Included</h4>
+                  <h4 className="font-semibold mb-3 group-hover:text-primary transition-colors duration-300">What's Included</h4>
                   <ul className="space-y-2">
                     {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start text-sm">
-                        <CheckCircle className="h-4 w-4 text-primary mr-2 mt-0.5 flex-shrink-0" />
-                        {feature}
+                      <li key={idx} className="flex items-start text-sm group/item hover:translate-x-2 transition-transform duration-300">
+                        <CheckCircle className="h-4 w-4 text-primary mr-2 mt-0.5 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-300" />
+                        <span className="group-hover/item:text-foreground transition-colors duration-300">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -160,10 +188,10 @@ export default function Services() {
 
                 {/* Technologies */}
                 <div>
-                  <h4 className="font-semibold mb-3">Technologies</h4>
+                  <h4 className="font-semibold mb-3 group-hover:text-primary transition-colors duration-300">Technologies</h4>
                   <div className="flex flex-wrap gap-2">
                     {service.technologies.map((tech) => (
-                      <Badge key={tech} variant="outline" className="text-xs">
+                      <Badge key={tech} variant="outline" className="text-xs hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110">
                         {tech}
                       </Badge>
                     ))}
@@ -171,9 +199,9 @@ export default function Services() {
                 </div>
 
                 {/* CTA Button */}
-                <Button className="w-full group">
+                <Button className="w-full group/btn hover:shadow-lg hover:shadow-primary/50 transition-all duration-300">
                   Get Started
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-2" />
                 </Button>
               </CardContent>
             </Card>
@@ -182,7 +210,7 @@ export default function Services() {
 
         {/* CTA Section */}
         <div className="text-center animate-on-scroll opacity-0 translate-y-8">
-          <Card className="bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 border-primary/20">
+          <Card className="bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 border-primary/20 hover:shadow-2xl transition-all duration-500 hover:scale-105">
             <CardContent className="p-8">
               <h2 className="text-3xl font-bold mb-4">Ready to Start Your Project?</h2>
               <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
@@ -190,13 +218,13 @@ export default function Services() {
                 ideas to life with modern web technologies.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" asChild>
+                <Button size="lg" asChild className="group hover:shadow-lg hover:shadow-primary/50 transition-all duration-300">
                   <a href="/contact">
                     Get Free Consultation
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-2" />
                   </a>
                 </Button>
-                <Button variant="outline" size="lg" asChild>
+                <Button variant="outline" size="lg" asChild className="hover:shadow-lg transition-all duration-300">
                   <a href="mailto:usama.binhaleem524@gmail.com">Email Me Directly</a>
                 </Button>
               </div>

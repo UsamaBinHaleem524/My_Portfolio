@@ -15,8 +15,8 @@ export default function Footer() {
               <span className="font-mono text-xl font-bold">{"<UBH />"}</span>
             </Link>
             <p className="text-muted-foreground mb-4 max-w-md">
-              MERN Stack Developer crafting robust backend solutions and scalable web applications with modern
-              technologies and best practices.
+              Full-stack Software Engineer with 3 years of experience building MERN and AI-powered applications. 
+              Skilled in developing full-stack products, AI agents, and workflow automations.
             </p>
             <div className="flex space-x-4">
               <a

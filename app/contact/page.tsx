@@ -115,7 +115,7 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Contact Information */}
           <div className="lg:col-span-1 space-y-6">
-            <Card className="animate-on-scroll opacity-0 translate-y-8">
+            <Card className="animate-on-scroll opacity-0 translate-y-8 hover:shadow-2xl transition-all duration-500 hover:scale-105 border-2 hover:border-primary/50">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <MessageCircle className="h-5 w-5 text-primary" />
@@ -130,8 +130,8 @@ export default function Contact() {
 
                 <div className="space-y-4">
                   {contactInfo.map((info, index) => (
-                    <div key={info.label} className="flex items-center gap-3">
-                      <div className="p-2 bg-primary/10 rounded-lg text-primary">{info.icon}</div>
+                    <div key={info.label} className="flex items-center gap-3 group/item hover:translate-x-2 transition-transform duration-300">
+                      <div className="p-2 bg-primary/10 rounded-lg text-primary group-hover/item:scale-125 transition-transform duration-300">{info.icon}</div>
                       <div>
                         <p className="text-sm font-medium">{info.label}</p>
                         {info.href !== "#" ? (
@@ -153,7 +153,7 @@ export default function Contact() {
               </CardContent>
             </Card>
 
-            <Card className="animate-on-scroll opacity-0 translate-y-8" style={{ animationDelay: "0.1s" }}>
+            <Card className="animate-on-scroll opacity-0 translate-y-8 hover:shadow-2xl transition-all duration-500 hover:scale-105 border-2 hover:border-primary/50" style={{ animationDelay: "0.1s" }}>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Clock className="h-5 w-5 text-primary" />
@@ -170,7 +170,7 @@ export default function Contact() {
 
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <Card className="animate-on-scroll opacity-0 translate-y-8" style={{ animationDelay: "0.2s" }}>
+            <Card className="animate-on-scroll opacity-0 translate-y-8 hover:shadow-2xl transition-all duration-500 border-2 hover:border-primary/50" style={{ animationDelay: "0.2s" }}>
               <CardHeader>
                 <CardTitle>Send Me a Message</CardTitle>
               </CardHeader>
@@ -227,7 +227,7 @@ export default function Contact() {
                     />
                   </div>
 
-                  <Button type="submit" className="w-full group" disabled={isSubmitting}>
+                  <Button type="submit" className="w-full group hover:shadow-lg hover:shadow-primary/50 transition-all duration-300" disabled={isSubmitting}>
                     {isSubmitting ? (
                       <>
                         <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
@@ -236,7 +236,7 @@ export default function Contact() {
                     ) : (
                       <>
                         Send Message
-                        <Send className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                        <Send className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:rotate-45" />
                       </>
                     )}
                   </Button>

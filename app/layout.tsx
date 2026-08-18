@@ -1,42 +1,48 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter, JetBrains_Mono } from "next/font/google"
+import { Syne, Outfit, IBM_Plex_Mono } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import Navigation from "@/components/navigation"
-import Footer from "@/components/footer"
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
-const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" })
+const syne = Syne({
+  subsets: ["latin"],
+  variable: "--font-display",
+  weight: ["500", "600", "700", "800"],
+})
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  variable: "--font-sans",
+})
+
+const plex = IBM_Plex_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  weight: ["400", "500"],
+})
 
 export const metadata: Metadata = {
-  title: "Usama Bin Haleem - MERN Stack Developer",
+  title: "Usama Bin Haleem — Full-Stack & AI Engineer",
   description:
-    "Proficient MERN stack developer with over a year of experience building scalable web applications and APIs using modern technologies.",
-  keywords: "MERN Stack Developer, React.js, Node.js, Express.js, MongoDB, Full Stack Developer, Web Development",
+    "Full-stack software engineer with 3 years of experience building MERN products, AI agents, RAG pipelines, and workflow automations.",
+  keywords:
+    "Full Stack Developer, AI Engineer, React, Next.js, Node.js, RAG, LangChain, NestJS, Usama Bin Haleem",
   authors: [{ name: "Usama Bin Haleem" }],
   openGraph: {
-    title: "Usama Bin Haleem - MERN Stack Developer",
-    description: "Crafting robust backend solutions with MERN stack technologies",
+    title: "Usama Bin Haleem — Full-Stack & AI Engineer",
+    description: "Building MERN products, AI agents, and automations.",
     type: "website",
   },
-    generator: 'v0.dev'
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange={false}>
-          <div className="relative flex min-h-screen flex-col">
-            <Navigation />
-            <main className="flex-1">{children}</main>
-            <Footer />
-          </div>
+      <body className={`${syne.variable} ${outfit.variable} ${plex.variable} font-sans`}>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange={false}>
+          <Navigation />
+          <main>{children}</main>
         </ThemeProvider>
       </body>
     </html>

@@ -45,43 +45,42 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
           {/* Profile Image */}
           <div className="animate-on-scroll opacity-0 translate-y-8">
-            <div className="relative">
-              <div className="w-80 h-80 mx-auto rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
+            <div className="relative group/profile">
+              <div className="w-80 h-80 mx-auto rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center group-hover/profile:scale-105 transition-transform duration-500 group-hover/profile:shadow-2xl group-hover/profile:shadow-primary/50">
                 <Image
                   src={pic}
                   alt="Usama Bin Haleem"
-                  className="rounded-xl object-cover !w-[300px] !h-[300px]"
+                  className="rounded-xl object-cover !w-[300px] !h-[300px] group-hover/profile:scale-110 transition-transform duration-500"
                 />
               </div>
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-primary rounded-full flex items-center justify-center">
-                <span className="text-2xl">👨‍💻</span>
+              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-to-r from-primary to-blue-500 rounded-full flex items-center justify-center shadow-lg group-hover/profile:scale-125 transition-transform duration-500 animate-pulse-glow">
+                <span className="text-3xl">👨‍💻</span>
               </div>
             </div>
           </div>
 
           {/* About Content */}
           <div className="animate-on-scroll opacity-0 translate-y-8">
-            <h2 className="text-3xl font-bold mb-6">MERN Stack Developer</h2>
+            <h2 className="text-3xl font-bold mb-6">Full-Stack Software Engineer</h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                I'm a proficient MERN stack developer with nearly two years of
-                hands-on experience building web applications and APIs using
-                modern technologies. My journey in software development has been
-                driven by a passion for creating robust and scalable solutions.
+                I'm a Full-stack Software Engineer with 3 years of experience building MERN and AI-powered applications. 
+                Skilled in developing full-stack products, AI agents, workflow automations, and third-party integrations. 
+                My journey in software development has been driven by a passion for creating robust and scalable solutions 
+                that solve real-world problems.
               </p>
               <p>
-                Currently working as a Software Engineer at A3Techverse, I
-                integrate AI agents into applications, implement advanced animations,
-                and develop interactive and highly responsive user interfaces. I also
-                work on projects involving various payment gateways, webhook processing,
-                and scheduled background tasks using cron jobs.
+                Currently working as a Senior Software Engineer at Ignite Dev, I build AI-powered solutions and full-stack 
+                applications for different client projects using Node.js, React.js, PostgreSQL, and automation tools. I've 
+                developed voice AI agents, integrated n8n workflows for automated data extraction, and worked on complex 
+                integrations with platforms like GoHighLevel.
               </p>
               <p>
-                My experience spans across various domains including real estate
-                platforms, healthcare applications, and business formation
-                services. I believe in writing clean, maintainable code and
-                following best practices to deliver exceptional user
-                experiences.
+                Previously at A3Techverse, I integrated AI agents into production apps using LangChain and LangGraph, 
+                built Slack-based AI assistants, and implemented Stripe payment integrations. My experience spans across 
+                various domains including AI/ML, real estate platforms, healthcare applications, cargo booking systems, 
+                and business formation services. I believe in writing clean, maintainable code and following best 
+                practices to deliver exceptional user experiences.
               </p>
             </div>
 
@@ -106,11 +105,11 @@ export default function About() {
 
         {/* Quick Facts */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 animate-on-scroll opacity-0 translate-y-8">
-          <Card>
+          <Card className="group hover:shadow-2xl transition-all duration-500 hover:scale-105 border-2 hover:border-primary/50 bg-gradient-to-br from-background to-primary/5">
             <CardContent className="p-6">
               <div className="flex items-center mb-4">
-                <GraduationCap className="h-6 w-6 text-primary mr-3" />
-                <h3 className="text-xl font-semibold">Education</h3>
+                <GraduationCap className="h-6 w-6 text-primary mr-3 group-hover:scale-125 transition-transform duration-300" />
+                <h3 className="text-xl font-semibold group-hover:text-primary transition-colors duration-300">Education</h3>
               </div>
               <div className="space-y-3">
                 <div>
@@ -133,23 +132,23 @@ export default function About() {
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className="group hover:shadow-2xl transition-all duration-500 hover:scale-105 border-2 hover:border-primary/50 bg-gradient-to-br from-background to-primary/5">
             <CardContent className="p-6">
               <div className="flex items-center mb-4">
-                <Calendar className="h-6 w-6 text-primary mr-3" />
-                <h3 className="text-xl font-semibold">Current Role</h3>
+                <Calendar className="h-6 w-6 text-primary mr-3 group-hover:scale-125 transition-transform duration-300" />
+                <h3 className="text-xl font-semibold group-hover:text-primary transition-colors duration-300">Current Role</h3>
               </div>
               <div>
-                <h4 className="font-medium">Software Engineer</h4>
+                <h4 className="font-medium">Senior Software Engineer</h4>
                 <p className="text-sm text-muted-foreground">
-                  A3Techverse, Remote, United States
+                  Ignite Dev, Remote, Lahore
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  August 2025 - Present
+                  Sept 2025 - Present
                 </p>
                 <p className="text-sm text-muted-foreground mt-2">
-                  Integrating AI agents into applications, implementing advanced animations,
-                  and developing interactive and highly responsive user interfaces.
+                  Building AI-powered solutions and full-stack applications using Node.js, React.js, 
+                  PostgreSQL, and automation tools. Developing voice AI agents and workflow automations.
                 </p>
               </div>
             </CardContent>
